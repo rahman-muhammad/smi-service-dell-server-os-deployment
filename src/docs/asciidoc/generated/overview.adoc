@@ -1,0 +1,14 @@
+= SMI Microservice : OS Deployment - Wsman
+
+== Overview
+Microservice For DELL Server OS Deployment via WSMAN
+
+=== URI scheme
+Host: localhost:46014
+BasePath: /
+
+=== Tags
+
+* os-deployment-controller-impl: OS Deployment Controller Impl
+
+

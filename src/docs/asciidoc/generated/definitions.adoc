@@ -1,0 +1,187 @@
+== Definitions
+=== EntityTag
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|value||false|string|
+|weak||false|boolean|
+|===
+
+=== FileShare
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|address||false|string|
+|description||false|string|
+|fileName||false|string|
+|name||false|string|
+|passwordCredential||false|<<PasswordCredential>>|
+|path||false|string|
+|type||false|enum (CIFS, NFS)|
+|===
+
+=== IsoConfigProperties
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|callbackUri||false|string|
+|destinationIsoNfsFolder||false|string|
+|destinationIsoNfsServerIp||false|string|
+|installOMSA||false|boolean|
+|isoType||false|enum (UNKNOWN, ESX4, ESXi4, ESXi5)|
+|mediaType||false|enum (HD_ONLY, SD_ONLY, FIRST_SD_THEN_HD)|
+|networkSettings||false|<<NetworkSettings>>|
+|nicForMgmtTasks||false|string|
+|sourceIsoFileName||false|string|
+|sourceIsoLocation||false|<<FileShare>>|
+|uuid||false|string|
+|===
+
+=== Link
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|params||false|object|
+|rel||false|string|
+|rels||false|string array|
+|title||false|string|
+|type||false|string|
+|uri||false|<<URI>>|
+|uriBuilder||false|<<UriBuilder>>|
+|===
+
+=== Locale
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|country||false|string|
+|displayCountry||false|string|
+|displayLanguage||false|string|
+|displayName||false|string|
+|displayScript||false|string|
+|displayVariant||false|string|
+|extensionKeys||false|<<Character>> array|
+|iso3Country||false|string|
+|iso3Language||false|string|
+|language||false|string|
+|script||false|string|
+|unicodeLocaleAttributes||false|string array|
+|unicodeLocaleKeys||false|string array|
+|variant||false|string|
+|===
+
+=== MediaType
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|parameters||false|object|
+|subtype||false|string|
+|type||false|string|
+|wildcardSubtype||false|boolean|
+|wildcardType||false|boolean|
+|===
+
+=== NetworkSettings
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|alternateDNSServer||false|string|
+|defaultGateway||false|string|
+|dhcpForIp||false|boolean|
+|hostName||false|string|
+|ipAddress||false|string|
+|preferredDNSServer||false|string|
+|subNetmask||false|string|
+|vLanId||false|integer (int32)|
+|===
+
+=== NewCookie
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|comment||false|string|
+|domain||false|string|
+|expiry||false|string (date-time)|
+|httpOnly||false|boolean|
+|maxAge||false|integer (int32)|
+|name||false|string|
+|path||false|string|
+|secure||false|boolean|
+|value||false|string|
+|version||false|integer (int32)|
+|===
+
+=== OSDeploymentPayload
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|hypervisorType||false|enum (UNKNOWN, ESX4, ESXi4, ESXi5, ESXi6)|
+|hypervisorVersion||false|string|
+|isoFileShare||false|<<FileShare>>|
+|oobCredentials||false|<<PasswordCredential>>|
+|oobIp||false|string|
+|===
+
+=== PasswordCredential
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|domain||false|string|
+|password||false|string|
+|username||false|string|
+|===
+
+=== Response
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|allowedMethods||false|string array|
+|cookies||false|object|
+|date||false|string (date-time)|
+|entity||false|object|
+|entityTag||false|<<EntityTag>>|
+|headers||false|object|
+|language||false|<<Locale>>|
+|lastModified||false|string (date-time)|
+|length||false|integer (int32)|
+|links||false|<<Link>> array|
+|location||false|<<URI>>|
+|mediaType||false|<<MediaType>>|
+|metadata||false|object|
+|status||false|integer (int32)|
+|statusInfo||false|<<StatusType>>|
+|stringHeaders||false|object|
+|===
+
+=== StatusType
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|family||false|enum (INFORMATIONAL, SUCCESSFUL, REDIRECTION, CLIENT_ERROR, SERVER_ERROR, OTHER)|
+|reasonPhrase||false|string|
+|statusCode||false|integer (int32)|
+|===
+
+=== URI
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|absolute||false|boolean|
+|authority||false|string|
+|fragment||false|string|
+|host||false|string|
+|opaque||false|boolean|
+|path||false|string|
+|port||false|integer (int32)|
+|query||false|string|
+|rawAuthority||false|string|
+|rawFragment||false|string|
+|rawPath||false|string|
+|rawQuery||false|string|
+|rawSchemeSpecificPart||false|string|
+|rawUserInfo||false|string|
+|scheme||false|string|
+|schemeSpecificPart||false|string|
+|userInfo||false|string|
+|===
+
